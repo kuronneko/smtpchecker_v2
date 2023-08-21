@@ -21,19 +21,6 @@
 
                 <form wire:submit.prevent="smtpSingleChecker">
                     @csrf
-                    <div class="mb-4">
-                        <x-label for="username" :value="__('Username')" />
-                        <x-input wire:model.defer="username" id="username"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="text"
-                            name="username" :value="old('username')" required autofocus autocomplete="username" />
-                    </div>
-
-                    <div class="mb-4">
-                        <x-label for="password" :value="__('Password')" />
-                        <x-input wire:model.defer="password" id="password"
-                            class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="text"
-                            name="password" required />
-                    </div>
 
                     <div class="mb-4">
                         <x-label for="host" :value="__('Host')" />
@@ -47,6 +34,20 @@
                         <x-input wire:model.defer="port" id="port"
                             class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="number"
                             name="port" :value="old('port')" required />
+                    </div>
+
+                    <div class="mb-4">
+                        <x-label for="username" :value="__('Username')" />
+                        <x-input wire:model.defer="username" id="username"
+                            class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="text"
+                            name="username" :value="old('username')" required autofocus autocomplete="username" />
+                    </div>
+
+                    <div class="mb-4">
+                        <x-label for="password" :value="__('Password')" />
+                        <x-input wire:model.defer="password" id="password"
+                            class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="text"
+                            name="password" required />
                     </div>
 
                     <div class="mb-4">
