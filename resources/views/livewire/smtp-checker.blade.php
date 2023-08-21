@@ -1,13 +1,15 @@
 <div>
 
-    <div class="flex justify-center items-center px-4 py-3 rounded relative">
-        @if (session()->has('success'))
+    @if (session()->has('success'))
+        <div class="flex justify-center items-center px-4 py-3 rounded relative">
             <p class="text-green-700">{{ session('success') }}</p>
-        @endif
-        @if (session()->has('error'))
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class="flex justify-center items-center px-4 py-3 rounded relative">
             <p class="text-red-700">{{ session('error') }}</p>
-        @endif
-    </div>
+        </div>
+    @endif
 
     <div
         class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
