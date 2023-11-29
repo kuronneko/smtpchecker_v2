@@ -19,41 +19,41 @@
                     <x-authentication-card-logo />
                 </x-slot>
 
-                <form wire:submit.prevent="smtpSingleChecker">
+                <form wire:submit.prevent="smtpSingleChecker" wire:loading.attr="disabled">
                     @csrf
 
                     <div class="mb-4">
                         <x-label for="host" :value="__('Host')" />
                         <x-input wire:model.defer="host" id="host"
                             class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="text"
-                            name="host" :value="old('host')" required />
+                            name="host" :value="old('host')" required wire:loading.attr="disabled" autofocus/>
                     </div>
 
                     <div class="mb-4">
                         <x-label for="port" :value="__('Port')" />
                         <x-input wire:model.defer="port" id="port"
                             class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="number"
-                            name="port" :value="old('port')" required />
+                            name="port" :value="old('port')" required wire:loading.attr="disabled"/>
                     </div>
 
                     <div class="mb-4">
                         <x-label for="username" :value="__('Username')" />
                         <x-input wire:model.defer="username" id="username"
                             class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="text"
-                            name="username" :value="old('username')" required autofocus autocomplete="username" />
+                            name="username" :value="old('username')" required wire:loading.attr="disabled" />
                     </div>
 
                     <div class="mb-4">
                         <x-label for="password" :value="__('Password')" />
                         <x-input wire:model.defer="password" id="password"
                             class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="text"
-                            name="password" required />
+                            name="password" required wire:loading.attr="disabled"/>
                     </div>
 
                     <div class="mb-4">
                         <x-label for="encryption" :value="__('Encryption')" />
                         <div class="relative">
-                            <select wire:model.defer="encryption" id="encryption" name="encryption"
+                            <select wire:model.defer="encryption" id="encryption" name="encryption" wire:loading.attr="disabled"
                                 class="mt-1 p-2 w-full border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                 <option value="tls" {{ old('encryption') === 'tls' ? 'selected' : '' }}>TLS
                                 </option>
@@ -67,14 +67,14 @@
                         <x-label for="address" :value="__('From address')" />
                         <x-input wire:model.defer="address" id="address"
                             class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="email"
-                            name="address" :value="old('address')" required />
+                            name="address" :value="old('address')" required wire:loading.attr="disabled"/>
                     </div>
 
                     <div class="mb-4">
                         <x-label for="recipient" :value="__('Recipient')" />
                         <x-input wire:model.defer="recipient" id="recipient"
                             class="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-200" type="email"
-                            name="recipient" :value="old('recipient')" required />
+                            name="recipient" :value="old('recipient')" required wire:loading.attr="disabled"/>
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
